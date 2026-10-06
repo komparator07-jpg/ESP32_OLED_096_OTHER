@@ -1,0 +1,26 @@
+// ===== Beeper (вставить куда угодно) =====
+uint8_t  beeperPin  = 5;
+uint16_t beeperFreq = 1500;
+uint16_t beeperDur  = 30;
+
+void beeperBegin() {
+  pinMode(beeperPin, OUTPUT);
+  noTone(beeperPin);
+}
+void beep() {
+  tone(beeperPin, beeperFreq, beeperDur);
+}
+// =========================================
+
+
+// (и использовать) 
+// =========================================
+void setup() {
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  beeperBegin();
+}
+
+void loop() {
+  // ... по нажатию кнопки:
+  beep();
+}
